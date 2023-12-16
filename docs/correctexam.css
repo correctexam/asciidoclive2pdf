@@ -1,0 +1,273 @@
+
+
+
+
+@media screen {
+    header {
+        display: none;
+      }
+      footer {
+        display: none;
+    }
+    
+  #roundtopleft {
+    display: none;
+  }
+  #roundtopright {
+    display: none;
+  }
+
+  #roundbottomleft {
+    display: none;
+  }
+  #roundbottomright {
+    display: none;
+
+  }
+}
+
+@media print {
+  #upload {
+    display: none;
+  }
+
+  #roundtopleft {
+    position: fixed;
+    left: 12mm;
+    top: 15mm;
+  }
+
+  #roundtopright {
+    position: fixed;
+    left: 192mm;
+    top: 15mm;
+  }
+
+  #zoneNom {
+    position: fixed;
+    left: 30mm;
+  }
+
+  .code {
+    font-size: 8pt;
+  }
+  #roundbottomleft {
+    position: fixed;
+    left: 8mm;
+    bottom: 8mm;
+  }
+  #roundbottomright {
+    position: fixed;
+    left: 192mm;
+    bottom: 8mm;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .content-block,
+  p,
+  .markdown-body {
+    page-break-inside: avoid;
+  }
+
+  p{
+    page-break-inside: avoid;
+  }
+
+
+  ul {
+    page-break-inside: avoid;
+  }
+
+  .sectionbody div {
+    page-break-before: avoid;
+    page-break-after: avoid;
+  }
+
+  .sect1 div {
+    page-break-before: avoid;
+    page-break-after: avoid;
+  }
+  .paragraph div{
+    page-break-before: avoid;
+    page-break-after: avoid;
+
+  }
+  
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  hr {
+    break-after: page;
+  }
+
+  h1{
+    page-break-after:avoid!;
+    page-break-inside: avoid!;
+    page-break-before: avoid!;
+    break-after: avoid!;
+  }
+  h2{
+    page-break-after:avoid;
+    page-break-inside: avoid!;
+    page-break-before: avoid;
+    break-after: avoid;
+  }
+  h3{
+    page-break-after:avoid;
+    break-after: avoid;
+  }
+  h4{
+    page-break-after: avoid;
+    break-after:  avoid;
+  }
+
+  div {
+    page-break-after:avoid;
+    page-break-before: avoid;
+    
+  }
+
+  .markdown-body:not(.next-editor) pre {
+    padding: 6px;
+  }
+
+@page {
+  @bottom-center {
+       content: "page " counter(page) "/" counter(pages);
+   }/*
+   @top-left{
+    content: url(square.svg);
+  }
+  @top-right{
+    content: url(square.svg);
+  }
+  @bottom-left{
+    content: url(square.svg);
+  }
+  @bottom-right{
+    content: url(square.svg);
+  }*/
+
+/*    marks: crop cross;*/
+    size: A4;
+
+  
+}
+
+
+/* print.css */
+
+/* target all pages */
+/*@page {
+  /* margin: 2cm;
+}*/
+
+/* target the first page only */
+@page :first {
+/*   margin-top: 6cm;*/
+}
+
+/* target left (even-numbered) pages only */
+@page :left {
+ /* margin-right: 4cm;*/
+}
+
+/* target right (odd-numbered) pages only */
+@page :right {
+  @top-center {
+    content: url(header.svg);
+    padding-top: 24px;
+    
+  }
+
+   margin-top: 6cm;
+}
+
+@page: blank {
+  @top-left {
+    content: none;
+  }
+} ;
+
+  pre {
+    width: 160mm;    
+  }
+
+  .markdown-body pre code .gutter.linenumber{
+    display: none;
+
+  }
+
+  body {
+    background: white;
+    font-size: 10pt;
+  }
+  p,li{
+    font-size: 10pt;
+  }
+  .task-list-item{
+    font-size: 10pt;
+  }
+  #menu {
+    display: none;
+  }
+/*  #wrapper,
+  #content {
+    width: auto;
+    margin: 0 5%;
+    padding: 0;
+    border: 0;
+    float: none !important;
+    background: transparent none;
+  }*/
+
+
+ /* div#content {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    
+/*    margin-left: 9%;
+    margin-right: 9%;
+    margin-bottom: 6em;
+    margin-top: 6em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+  }*/
+
+
+
+  a:link,
+  a:visited {
+    color: #520;
+    font-size: 10pt;
+    background: transparent;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  #doc a:link:after,
+  #content a:visited:after {
+    content: " (" attr(href) ") ";
+    font-size: 90%;
+  }
+  #doc a[href^="/"]:after {
+    content: " (http://www.google.com" attr(href) ") ";
+  }
+
+  
+}
