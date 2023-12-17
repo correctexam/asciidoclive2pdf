@@ -3,27 +3,7 @@
 
 
 @media screen {
-  #templateheader{
-    display: none;
-  }
-  .template footer {
-    display: none;
-}
 
-  #roundtopleft {
-    display: none;
-  }
-  #roundtopright {
-    display: none;
-  }
-
-  #roundbottomleft {
-    display: none;
-  }
-  #roundbottomright {
-    display: none;
-
-  }
 }
 
 @media print {
@@ -35,28 +15,6 @@
     display: none;
   }
 
-  #templateheader {
-    position: fixed;
-    top: 0;
-  }
-
-  .template footer {
-    position: fixed;
-    bottom: 0;
-  }
-
-
-  #roundtopleft {
-    position: fixed;
-    left: 12mm;
-    top: 15mm;
-  }
-
-  #roundtopright {
-    position: fixed;
-    left: 192mm;
-    top: 15mm;
-  }
 
   #zoneNom {
     position: fixed;
@@ -65,16 +23,6 @@
 
   .code {
     font-size: 8pt;
-  }
-  #roundbottomleft {
-    position: fixed;
-    left: 8mm;
-    bottom: 8mm;
-  }
-  #roundbottomright {
-    position: fixed;
-    left: 192mm;
-    bottom: 8mm;
   }
 
 
