@@ -3,13 +3,13 @@
 
 
 @media screen {
-    .template header {
-        display: none;
-      }
-      .template footer {
-        display: none;
-    }
-    
+  #templateheader{
+    display: none;
+  }
+  .template footer {
+    display: none;
+}
+
   #roundtopleft {
     display: none;
   }
@@ -30,9 +30,21 @@
   #upload {
     display: none;
   }
+  
   #view {
     display: none;
   }
+
+  #templateheader {
+    position: fixed;
+    top: 0;
+  }
+
+  .template footer {
+    position: fixed;
+    bottom: 0;
+  }
+
 
   #roundtopleft {
     position: fixed;
@@ -65,14 +77,6 @@
     bottom: 8mm;
   }
 
-  header {
-    position: fixed;
-    top: 0;
-  }
-  footer {
-    position: fixed;
-    bottom: 0;
-  }
 
   .content-block,
   p,
@@ -149,7 +153,33 @@
 @page {
   @bottom-center {
        content: "page " counter(page) "/" counter(pages);
-   }/*
+   }
+   @top-left-corner {
+    content: url(circlecorner.svg);
+    padding-right: 25pt;
+    padding-bottom: 1cm;
+    margin-bottom: 1cm;
+  }
+  @top-right-corner {
+    content: url(circlecorner.svg);
+    padding-left: 25pt;
+    padding-bottom: 1cm;
+    margin-bottom: 1cm;
+  }
+  @bottom-left-corner {
+    content: url(circlecorner.svg);
+    padding-right: 25pt;
+/*    padding-top: 1cm;
+    margin-top: 1cm;*/
+  }
+  @bottom-right-corner {
+    content: url(circlecorner.svg);
+    padding-left: 25pt;
+/*    padding-top: 1cm;
+    margin-top: 1cm;*/
+  }
+
+   /*
    @top-left{
     content: url(square.svg);
   }
@@ -191,10 +221,8 @@
 @page :right {
   @top-center {
     content: url(header.svg);
-    padding-top: 24px;
-    
+    padding-top: 24px;    
   }
-
    margin-top: 6cm;
 }
 
