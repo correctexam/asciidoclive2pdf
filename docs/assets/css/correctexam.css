@@ -102,7 +102,76 @@
   @bottom-center {
        content: "page " counter(page) "/" counter(pages);
    }
-   @top-left-corner {
+
+   /*
+   @top-left{
+    content: url(square.svg);
+  }
+  @top-right{
+    content: url(square.svg);
+  }
+  @bottom-left{
+    content: url(square.svg);
+  }
+  @bottom-right{
+    content: url(square.svg);
+  }*/
+
+/*    marks: crop cross;*/
+    size: A4;  
+}
+
+
+/* print.css */
+
+/* target all pages */
+/*@page {
+  /* margin: 2cm;
+}*/
+
+/* target the first page only */
+@page :first {
+/*   margin-top: 6cm;*/
+}
+
+/* target left (even-numbered) pages only */
+
+@page :left {
+  @top-left-corner {
+    content: url(circlecorner.svg);
+    padding-right: 25pt;
+    padding-bottom: 1cm;
+    margin-bottom: 1cm;
+    padding-top: 1cm;
+    margin-top: 1cm;
+  }
+  @top-right-corner {
+    content: url(circlecorner.svg);
+    padding-left: 25pt;
+    padding-bottom: 1cm;
+    margin-bottom: 1cm;
+    padding-top: 1cm;
+    margin-top: 1cm;
+
+  }
+  @bottom-left-corner {
+    content: url(circlecorner.svg);
+    padding-right: 25pt;
+/*    padding-top: 1cm;
+    margin-top: 1cm;*/
+  }
+  @bottom-right-corner {
+    content: url(circlecorner.svg);
+    padding-left: 25pt;
+/*    padding-top: 1cm;
+    margin-top: 1cm;*/
+  }
+
+}
+
+/* target right (odd-numbered) pages only */
+@page :right {
+  @top-left-corner {
     content: url(circlecorner.svg);
     padding-right: 25pt;
     padding-bottom: 1cm;
@@ -127,52 +196,13 @@
     margin-top: 1cm;*/
   }
 
-   /*
-   @top-left{
-    content: url(square.svg);
-  }
-  @top-right{
-    content: url(square.svg);
-  }
-  @bottom-left{
-    content: url(square.svg);
-  }
-  @bottom-right{
-    content: url(square.svg);
-  }*/
-
-/*    marks: crop cross;*/
-    size: A4;
-
-  
-}
-
-
-/* print.css */
-
-/* target all pages */
-/*@page {
-  /* margin: 2cm;
-}*/
-
-/* target the first page only */
-@page :first {
-/*   margin-top: 6cm;*/
-}
-
-/* target left (even-numbered) pages only */
-@page :left {
- /* margin-right: 4cm;*/
-}
-
-/* target right (odd-numbered) pages only */
-@page :right {
   @top-center {
     content: url(header.svg);
     padding-top: 24px;    
   }
    margin-top: 6cm;
 }
+
 
 @page: blank {
   @top-left {
