@@ -1609,7 +1609,7 @@ span.icon > .fa {
   font-weight: bold;
 }
 .conum[data-value] * {
-  color: #fff !important;
+/*  color: #fff !important;*/
 }
 .conum[data-value] + b {
   display: none;
