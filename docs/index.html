@@ -218,6 +218,70 @@ $("#file").change((()=> {
 			$( "div.sect3",tempDom ).each((i,obj)=> {$(obj).replaceWith($(obj).children())});
 			$( "div.sect2",tempDom ).each((i,obj)=> {$(obj).replaceWith($(obj).children())});
 			$( "div.sect1",tempDom ).each((i,obj)=> {$(obj).replaceWith($(obj).children())});
+			/* $( "img[src*='#box']",tempDom ).each((i,obj)=> {
+				const s = ($(obj).attr('height'))
+				if ((+s)<= 50){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box50.png')
+					$(obj).attr('style', 'width:600px;height:50px')
+
+				} else if ((+s)<= 100){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box100.png')
+				}
+				else if ((+s)<= 150){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box150.png')
+				}
+				else if ((+s)<= 200){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box200.png')
+				}
+				else if ((+s)<= 250){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box250.png')
+				}
+				else if ((+s)<= 300){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box300.png')
+				}
+				else if ((+s)<= 350){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box350.png')
+				}
+				else if ((+s)<= 400){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box400.png')
+				}
+				else if ((+s)<= 450){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box450.png')
+				}
+				else if ((+s)<= 500){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box500.png')
+				}
+				else if ((+s)<= 550){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box550.png')
+				}
+				else if ((+s)<= 600){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box600.png')
+					$(obj).css('width', '600')
+					$(obj).css('height', '600')
+					$(obj).removeAttr('height')
+					$(obj).removeAttr('width')
+
+				}
+				else if ((+s)<= 650){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box650.png')
+				}
+				else if ((+s)<= 700){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box700.png')
+				}
+				else if ((+s)<= 750){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box750.png')
+				}
+				else if ((+s)<= 800){
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box800.png')
+				}
+				else {
+					$(obj).attr('src', 'https://correctexam.github.io/asciidoclive2pdf/box/box200.png')
+					$(obj).attr('style', 'width:600px;height:200px')
+
+				}
+
+		
+		});*/
 			$( "div.sectionbody",tempDom ).each((i,obj)=> {$(obj).replaceWith(($(obj).children()));});
   /*          $( "div.sect3",tempDom ).replaceWith( $('div.sect3', tempDom).html());
 			$( "div.sect2",tempDom ).replaceWith( $('div.sect2', tempDom).html());
@@ -237,9 +301,22 @@ $("#file").change((()=> {
   /*  $('.task-list-item-checkbox').hide();
 	  $('.task-list-item-checkbox').after('<div id="cont" style="display:contents;"><svg width="12px" height="12px" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" version="1.1"><rect style="fill:rgb(255,255,255);stroke-width:1;stroke:rgb(0,0,0)" height="12" width="12"></rect></svg></div>');*/
   /*    $("#cont").html($("#cont").html());*/
+	window.PagedConfig = {
+		auto: true,
+		after: (flow) => { 
+			setTimeout(()=> {
+				hljs.highlightAll();
+  
+			  },1000)
+		//	console.error("after", flow) 
+		
+		},
+	};
+
 	  $.getScript('https://unpkg.com/pagedjs/dist/paged.polyfill.js', function() {
 			  console.error('loaded')
-			 /* class MyHandler extends Paged.Handler {
+			 
+/*			  class MyHandler extends Paged.Handler {
 			  constructor(chunker, polisher, caller) {
 				super(chunker, polisher, caller);
 			  }
@@ -250,21 +327,30 @@ $("#file").change((()=> {
 			  afterPreview(pages){
 				console.error(pages)
 			  }
+			  onOverflow(overflow, rendered, bounds){
+				console.error('overflow',overflow)
+			  }
+
 			}
-			console.error(Paged);
-			console.error(MyHandler,Paged);
 			
-			Paged.registerHandlers(MyHandler);*/
-  
-			  setTimeout(()=> {
+			Paged.registerHandlers(MyHandler);
+			window.PagedPolyfill.preview();
+			*/
+
+/*			let paged = new Paged.Previewer();
+			let flow = paged.preview(document.body, [], document.body).then((flow) => {
+					console.log("Rendered", flow.total, "pages.");
+/*					setTimeout(()=> {
 				hljs.highlightAll();
   
-			  },2000)
+			  },2000)*/
+  
+			})
+  
+			
   
   
-  
-		  });
-  });
+	  });
   
 	  };
 	  reader.readAsDataURL($("#file")[0].files[0]);

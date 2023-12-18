@@ -41,21 +41,6 @@
     page-break-inside: avoid;
   }
 
-  .sectionbody div {
-    page-break-before: avoid;
-    page-break-after: avoid;
-  }
-
-  .sect1 div {
-    page-break-before: avoid;
-    page-break-after: avoid;
-  }
-  .paragraph div{
-    page-break-before: avoid;
-    page-break-after: avoid;
-
-  }
-  
 
   html,
   body {
@@ -88,15 +73,7 @@
     break-after:  avoid;
   }
 
-  div {
-    page-break-after:avoid;
-    page-break-before: avoid;
-    
-  }
 
-  .markdown-body:not(.next-editor) pre {
-    padding: 6px;
-  }
 
 @page {
   @bottom-center {
@@ -275,7 +252,7 @@
     font-size: 90%;
   }
   #doc a[href^="/"]:after {
-    content: " (http://www.google.com" attr(href) ") ";
+    content: " (" attr(href) ") ";
   }
 
   
